@@ -26,4 +26,12 @@ people:
 - for the sections on which extensive literature is already available insert the references directly under the section titles instead of putting it in the note. for eg. 
     - stabilizer groups 
     - basic structure and examples of stabilizer hamiltonians 
-- [ ] deciding to elabiorate the main ideas using the example on bell-states, i'll alos introduce the idea of logical operators 
+- [ ] deciding to elaborate the main ideas using the example on bell-states, i'll also introduce the idea of logical operators 
+
+#### [[dailynotes/14-01-2025|14-01-2025]]
+
+- https://arxiv.org/pdf/1505.07811 ; Section: SUPPLEMENTAL MATERIAL, Stabilizer heat bath and Davis generators.
+    - Has some description on the notation thta t ackles the action of paulis on stabilizer hamiltonians
+    - ![[obsidian-attatchments/Pasted image 20250114181904.png]]
+- [ ] we also need to include the behavior under the action of pauli-exponentials as well.
+- [ ] I think we also need to present the case where we have $k\leq n$ generators, which is something excluded in the usual literature but is rather important for our line of study.

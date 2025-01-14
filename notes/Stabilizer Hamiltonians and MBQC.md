@@ -31,7 +31,7 @@ We know that for single qubits there are three n on-trivial pauli operators name
 Similarly for a n-qubit system we can construct respective pauli operators by taking n-tensor products of the single qubit pauli operators as $\mathcal{P}^{\otimes n} = \bigotimes_{i=1}^{n}\mathcal{P}^{\otimes 1}$, for example $\mathcal{P}^{\otimes2}=\{I, X_{0}, Z_{0},Y_{0}\}\otimes \{I, X_{1}, Z_{1}, Y_{1}\}$. Generalizing the result before we can see that an $n$ qubit system must have $2n$ many 'independent' pauli operators, represented as $\{X_{0}, Z_{0}, X_{1}, Z_{1} \dots X_{n}, Z_{n}\}$. Observe that they must satisfy the commutation relation $$X_{i} \odot Z_{j}= \delta_{ij}$$,which we will refer to as the 'canonical commutation relation' and is easy to deduce from the fact that the pauli operators only interact non-trivially when they're acting on the same qubit and thus must commute otherwise (remember $X_{i}= I_1 \otimes \dots \otimes X_{i} \otimes \dots I_n$). 
 
 We can define a canonical transformation $T: \mathcal{P}^{\otimes n} \to \mathcal{P}^{\otimes n}$ which transforms the independent pauli operators to independent pauli-operators as 
-$$\begin{align} \forall_{i=1}^{n} \:\:\: X_{i} \to \tilde{X_{i}}\:; \: Z_{i}\to \tilde{Z_i}\end{align}$$where $\tilde{X_{i}} \otimes \tilde{Z_{j}} = \delta_{ij}$. Note that $\tilde{X_{i}}, \tilde{Z_{i}}$ are not necessarily single qubits operators unlike $X_{i}, Z_{i}$, but could be any element from $\mathcal{P}^{\otimes n}$ as long as they satisfy the commutation relation. 
+$$\begin{align} \forall_{i=1}^{n} \:\:\: X_{i} \to \tilde{X_{i}}\:; \: Z_{i}\to \tilde{Z_i}\end{align}$$ where $\tilde{X_{i}} \otimes \tilde{Z_{j}} = \delta_{ij}$. Note that $\tilde{X_{i}}, \tilde{Z_{i}}$ are not necessarily single qubits operators unlike $X_{i}, Z_{i}$, but could be any element from $\mathcal{P}^{\otimes n}$ as long as they satisfy the commutation relation. 
 For example we can define the following transformation on $\mathcal{P}^{\otimes 2}$ $$\begin{align} Z_{1} \to X_{1}X_{2} \:&;\: Z_{2}\to Z_{1}Z_{2} \\ X_{1} \to Z1 \:&; \: X_{2} \to X_1 \end{align}$$, where the the operators $Z_{1}, Z_{2}$ are mapped to non-local pauli-operators. All such pauli groups generated via canonical-transformations are called "isomorphic" and such transformations are called "Clifford" transformations, something we will come back to later. 
 
 #### Stabilizer States
@@ -42,6 +42,7 @@ For convenience we can use the notation $\ket{\mathcal{S}} = \ket{S_{1}S_{2} \do
 
 From the properties of pauli operators discussed above its easy to see the for corresponding to any set of n independent and commuting pauli operators $\mathcal{S}$ we must have a complementary set of n independent and commuting operators $\mathcal{S}^c$ such that for every element of $\mathcal{S}$ there exists exactly one element in $\mathcal{S}^c$ that anti-commutes with it. This relation can be encapsulated by recognizing the paulis in $\mathcal{S}$ and $\mathcal{S}^{c}$ with $\mathcal{\tilde{Z}}$ and $\mathcal{\tilde{X}}$ respectively, (i.e $S_{i}\to \tilde{Z}_{i}\:, \: S^{c}_{i} \to \tilde{X}_{i}$)
 #### Action of Pauli operators on Stabilizer States
+
 Since $\forall_{i} \: \tilde{Z}_{i} \ket{\tilde{\mathcal{Z}}} = \ket{\tilde{\mathcal{Z}}}$ 
 $$\begin{align} \tilde{Z}_{i}  \ket{\tilde{Z}_{1}.. \tilde{Z}_{j} .. -\tilde{Z}_{i}\dots \tilde{Z}_{n}}  \: &= \: -\ket{\tilde{Z}_{1}.. \tilde{Z}_{j}..-\tilde{Z}_{i}\dots \tilde{Z}_{n}}  \\ \tilde{Z}_{j}  \ket{\tilde{Z}_{1}.. \tilde{Z}_{j} .. -\tilde{Z}_{i}\dots \tilde{Z}_{n}}  \: &= \: \ket{\tilde{Z}_{1}.. \tilde{Z}_{j}..-\tilde{Z}_{i}\dots \tilde{Z}_{n}} \end{align}$$
 the only paulis that act non-trivially (i.e not equivalent upto overall phase) on the stabilizer state $\ket{\mathcal{\tilde{Z}}}$ must be elements of the set $\mathcal{\tilde{X}}$. 
@@ -63,35 +64,30 @@ The bell state or more generally the bell basis is characterized by the stabiliz
 
 Question is how can we generate the entire basis for the two-qubit hilbert space $\mathcal{H}^{\otimes2^2 }$ ? We can try investigating this by redefining a set of four stabilizer generators as $$\mathcal{S}_{\beta_{ij}} = \{ -1^{i}X_{0}X_{1},-1^{j} Z_{0}Z_{1} \} $$. Where for any $i,j$ the structure of the generators $\mathcal{S}_{\beta_{ij}}$ indicate the measurement outcome we should get upon measuring each individual generator, for instance a state $\ket{\beta_{01}}$ stabilized by $\mathcal{S}_{\beta_{01}}$ should satisfy the conditions $$X_0X_{1}\ket{\beta_{01}}= \ket{\beta_{01}} \:; \: Z_0Z_{1}\ket{\beta_{01}}= -\ket{\beta_{01}}$$. But how do we guess that state $\ket{\beta_{01}}$ (or any $\ket{\beta_{ij}}$)? Remember from the previous example that if we define $\tilde{Z_{0}}=X_0X_{1} , \tilde{Z_{1}}= Z_{0}Z_{1}$ we can have $\tilde{X_{0}}=Z_{1}, \tilde{X_{1}}=X_1$ such that $\forall_{i=0,1} \: \tilde{Z_{i}} \odot \tilde{X_{j}} = \delta_{ij}$, we can use this property to write $$\forall_{ij \in \{0,1\}^{\otimes 2}} \:\:: \:\: \ket{\beta_{ij}}  \: = \: \tilde{X}_{0}^{i} \tilde{X}_{1}^{j} \:\ket{\beta_{00}}$$ thus obtaining an orthogonal basis for the 2-qubit hilbert space $\mathcal{H}^{\otimes 2^{2}}$.  
  
-
 #### Partially Stabilized States
 Up until now we discuss stabilizer states which were fully stabilized in the sense that we had n independent generators for an n qubit system. However for most practical circumstances we will be interested in states which are only partially stabilized i.e will have $k \: :\:k\leq n$ independent generators instead. 
 On a $n$ qubit system with any state $\ket{\psi}$ with $k$ independent stabilizer-generators $\mathcal{S}  =\{\tilde{Z}_{1}\dots \tilde{Z}_{k}\}\::\: |\mathcal{S}|=k \leq n$ will be spanned by $2^{n-k}$ basis vectors of the form $\{\ket{\pm \tilde{Z}_{k+1} \dots \pm \tilde{Z}_{n}}\}$. 
 
 For instance, consider a 3 qubit system, on which the stabilizer generators are defined as $\mathcal{S} = \{X_{0} Z_{1}, Z_{0}X_{1}Z_{2} \}$, just like before we can recognize the elements in $\mathcal{S}$ as $\tilde{Z}_{0}= X_{0}Z_{1} \:, \: \tilde{Z}_{1} \:= \: Z_{0}X_{1}Z_{2}$. We can complete the $\tilde{Z}$ pauli-operators by picking $\tilde{Z}_{2}= Z_{1}X_{2}$ and then pick the $\tilde{X}$ operators as $\forall_{i\in \{0,1,2\}} \:\tilde{X}_{i}= Z_{i}$ such that the canonical commutation relations ($\forall_{i,j} \:\tilde{X}_{i}\odot \tilde{Z}_{j} = \delta_{ij}$) are satisfied. Any state $\ket{\psi}$ that is 'partially-stabilized' by $\mathcal{S}$ must be spanned by the linear combination of $\{\ket{X_{0} Z_{1}, Z_{0}X_{1}Z_{2}, Z_{1}X_{2}} , \ket{X_{0} Z_{1}, Z_{0}X_{1}Z_{2}, -Z_{1}X_{2}} \}$ i.e $$\ket{\psi} = \alpha \ket{X_{0} Z_{1}, Z_{0}X_{1}Z_{2}, Z_{1}X_{2}} + \beta \ket{X_{0} Z_{1}, Z_{0}X_{1}Z_{2}, -Z_{1}X_{2}}$$for arbitrary $\alpha, \beta$. Realize that even though the system has 3 physical qubits, in essence the state $\ket{\psi}$ is spanned by just two basis vectors and thus is an element of a  hilbert-space $\mathcal{H}^{\otimes 2}$ and thus is equivalent to single qubit. In the refs. this fact is referred to as $\ket{\psi}$ encoding just one 'logical qubit'. 
 
-
- 
-
+For any system of $k$ stabilizer-generators on an $n$ dimensional system, we can have a logical space of $n-k$ qubits (i.e of dim $\mathcal{H}^{2^{n-k}}$)  , correspondingly there will be $2(n-k)$ independent pauli-operators that commute with paulis in $\mathcal{S}$ we will indicate as $\mathcal{L}(\braket{\mathcal{S}})$. In the above example $\mathcal{L}(\braket{\mathcal{S}})= \{Z_{2}, Z_{1}X_{2}\}$. 
 
 
-
-
-
-
-
- 
 ---
 ### Properties of Stabilizer Hamiltonian
 **Refs :**
-- [stabh#1] :  [[ReadingDocuments/StabGroundStatesSimManyBodyPhysics@JSun24.pdf#page=3&selection=3,0,5,48|StabGroundStatesSimManyBodyPhysics@JSun24, p.3]]
+- [stabh#1] :  https://arxiv.org/pdf/1505.07811, SUPPLEMENTAL MATERIAL, Stabilizer heat bath and Davis generators
+- [[ReadingDocuments/StabGroundStatesSimManyBodyPhysics@JSun24.pdf#page=3&selection=3,0,5,48|StabGroundStatesSimManyBodyPhysics@JSun24, p.3]]
+-        
 ---
 
 Given Stabilizer Group (i.e a commuting set of pauli) we can always construct a stabilizer hamiltonian of the form 
-$$H_{\mathcal{S}}= - \sum\limits_{S \in \mathcal{S}} S$$. We can probe into the eigen spectrum of the hamiltonian by using few simple properties. Any state $\ket{\psi}$ we have $S \ket{\psi} =\ket{\psi}$ or $S \ket{\psi}=-\ket{\psi}$ since $S \in \mathbb{P}^{\otimes{n}}$ , thus $$H_{\mathcal{S}}\ket{\psi}=- \sum\limits_{S \in \mathcal{S}}S \ket{\psi} = - \sum\limits_{S\in \mathcal{S}} (-1)^{\psi_{S}}\: \ket{\psi}$$  where $S \ket{\psi} = \psi_{S}\ket{\psi}$. If we have $k$ generators (i.e $|\mathcal{S}|=k$) , then $H_{\mathcal{S}}$ has $\frac{(k+1)!}{k! 1!}=k$ distinct eigenvalues of the form $\lambda(H_{\mathcal{S}}) =\{k, k-2, \dots ,-k\}$. We can enumerate the eigenvalues simply by choosing the number of stabilizers $S \in \mathcal{S}$ that are in their $+1$ eigenspace, i.e we can partition the stabilizer generators as $\mathcal{S} = \mathcal{S^{+}} \cup \mathcal{S^{-}}$ where the set $\mathcal{S^+}$ and $\mathcal{S^{-}}$ correspond to the set of stabilizers with +1 and -1 eigenspace respectively. So if $\lambda(H_{\mathcal{S}}) = E$ we know that $|\mathcal{S^{+}|}= \frac{E+k}{2}$ and $\mathcal{S^-}=\frac{-E+k}{2}$. 
-It is easy to see that the eigen
+$$H_{\mathcal{S}}= - \sum\limits_{S \in \mathcal{S}} S$$. We can probe into the eigen spectrum of the hamiltonian by using few simple properties. Any state $\ket{\psi}$ we have $S \ket{\psi} =\ket{\psi}$ or $S \ket{\psi}=-\ket{\psi}$ since $S \in \mathbb{P}^{\otimes{n}}$ , thus $$H_{\mathcal{S}}\ket{\psi}=- \sum\limits_{S \in \mathcal{S}}S \ket{\psi} = - \sum\limits_{S\in \mathcal{S}} (-1)^{\psi_{S}}\: \ket{\psi}$$  where $S \ket{\psi} = -1^{\psi_{S}}\ket{\psi}$ and $\forall_{S \in \mathcal{S}} \:: \:\psi_{S}\in \{0,1\}$. If we have $k$ generators (i.e $|\mathcal{S}|=k$) , then $H_{\mathcal{S}}$ has $\frac{(k+1)!}{k! 1!}=k$ distinct eigenvalues of the form $\epsilon(H_{\mathcal{S}}) =\{k, k-2, \dots ,-k\}$. We can enumerate the eigenvalues simply by choosing the number of stabilizers $S \in \mathcal{S}$ that are in their $+1$ eigenspace i.e we can partition the stabilizer generators as $\mathcal{S} = \mathcal{S^{+}} \cup \mathcal{S^{-}}$ where the set $\mathcal{S^+}$ and $\mathcal{S^{-}}$ correspond to the set of stabilizers with +1 and -1 eigenspace respectively, the energy configuration can be represented compactly as $\psi_\mathcal{S} = (\psi_{S_{1}}, \psi_{S_{2}}, \dots , \psi_{S_{k}})\:\in \{0,1\}^k$  .
+So if $\epsilon(\psi_{\mathcal{S}}) = E$ we know that $|\mathcal{S^{+}|}= \frac{E+k}{2}$ and $|\mathcal{S^-}|=\frac{-E+k}{2}$ where there are $\frac{k!}{|\mathcal{S}^{+}!||\mathcal{S}^{-}|}$ many configurations corresponding to the energy level $E$. Further since an energy configuration $\psi_{\mathcal{S}}$ only specifies the state of $k$ stabilizer-measurements the corresponding eigenspace has a degeneracy equivalent to the $\mathcal{H}^{2^{n-k}}$ dimensional logical space. 
 
-It is easy to see that the eigen-spectrum of the corresponding hamiltonian is degenerate, and we can find all the eigenstates  corresponding to a 
+From the section [#Action of Pauli operators on Stabilizer States](#Action%20of%20Pauli%20operators%20on%20Stabilizer%20States.md) we can see that any eigenstate of $H_{\mathcal{S}}$ corresponding to the energy configuration $\psi_\mathcal{S}$ would transform under the action of pauli operator $P$ would transform to another state that has the energy configuration is $\tilde{\psi}_\mathcal{S}= (\forall_{S_{i}\in \mathcal{S}} \: \: (P \odot S_{i})\oplus\psi_{S_{i}})$ where $\oplus$ is addition modulo 2 (aka XOR addition).
+
+**Example :** For Bell states, $H_{\beta} = - (X_{1}X_{2} + Z_{1}Z_{2})$ , realize that the state $\ket{\beta_{ij}}$ corresponds to the energy configuration $\psi_{\beta}= (i,j)$. And has the following eigen-decomposition. $\epsilon(\beta_{00})=-2$, $\epsilon(\beta_{01}) = \epsilon(\beta_{10}) =0$ ,$\epsilon(\beta_{11}) = 2$. 
 
 
 ### Effect of Perturbation on Stabilizer Hamiltonians
