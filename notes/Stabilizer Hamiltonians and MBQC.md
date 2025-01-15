@@ -32,7 +32,7 @@ Similarly for a n-qubit system we can construct respective pauli operators by ta
 
 We can define a canonical transformation $T: \mathcal{P}^{\otimes n} \to \mathcal{P}^{\otimes n}$ which transforms the independent pauli operators to independent pauli-operators as 
 $$\begin{align} \forall_{i=1}^{n} \:\:\: X_{i} \to \tilde{X_{i}}\:; \: Z_{i}\to \tilde{Z_i}\end{align}$$ where $\tilde{X_{i}} \otimes \tilde{Z_{j}} = \delta_{ij}$. Note that $\tilde{X_{i}}, \tilde{Z_{i}}$ are not necessarily single qubits operators unlike $X_{i}, Z_{i}$, but could be any element from $\mathcal{P}^{\otimes n}$ as long as they satisfy the commutation relation. 
-For example we can define the following transformation on $\mathcal{P}^{\otimes 2}$ $$\begin{align} Z_{1} \to X_{1}X_{2} \:&;\: Z_{2}\to Z_{1}Z_{2} \\ X_{1} \to Z1 \:&; \: X_{2} \to X_1 \end{align}$$, where the the operators $Z_{1}, Z_{2}$ are mapped to non-local pauli-operators. All such pauli groups generated via canonical-transformations are called "isomorphic" and such transformations are called "Clifford" transformations, something we will come back to later. 
+For example we can define the following transformation on $\mathcal{P}^{\otimes 2}$ as $$\begin{align} Z_{1} \to X_{1}X_{2} \:&;\: Z_{2}\to Z_{1}Z_{2} \\ X_{1} \to Z1 \:&; \: X_{2} \to X_1 \end{align}$$, where the the operators $Z_{1}, Z_{2}$ are mapped to non-local pauli-operators. All such pauli groups generated via canonical-transformations are called "isomorphic" and such transformations are called "Clifford" transformations, something we will come back to later. 
 
 #### Stabilizer States
 
