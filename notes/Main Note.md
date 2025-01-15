@@ -5,6 +5,7 @@ people:
   - "[[_tags/_people/@martina|@martina]]"
 references: "[[conversations/［qat-hiring］ Interest in Intership @ Harold Ollivier ˂harold.ollivier@inria.fr˃|［qat-hiring］ Interest in Intership @ Harold Ollivier ˂harold.ollivier@inria.fr˃]]"
 ---
+## Introduction to Stabilizer Groups and Hamiltonians
 
 %% Add defnitions of stabilizers  %%
 
@@ -19,6 +20,7 @@ references: "[[conversations/［qat-hiring］ Interest in Intership @ Harold Oll
 > - How to represent an arbitrary quantum state in the formalism,
 > - Realize that any quantum arbitrary state can have a stabilized and a non-stabilized (/logical) subspace 
 > - How to see the analogue of an unitary transformation in the stabilizer formalism 
+> - The idea of 'Gottesman-Knill' theorem, which claims that its possible to "Classically simulate the time-evolution of Clifford unitaries on a Stabilizer State", this fact is something that will show up in many different forms throughout. 
 > It won't be necessary to dive into concepts specific to error-correction such as code-distance, etc. (*unless you find them interesting ;)*
 > 
 > Below I will summarise just a few basics notations and concepts that I will be using in rest of the document.  
@@ -58,6 +60,7 @@ Thus we can use this 'stabilizer-basis' to represent any arbitrary state in the 
 Realize that the mostly commonly used computational basis state $\{ \ket{\bigotimes_{i=1}^{n} z_{i}}  \:\:  \forall_{i}z_{i} \in \{0,1\} \: \}$ is also a 'stabilizer-basis' where we have restricted all the stabilizer operators $\forall_{i} \tilde{Z}_{i}$ to be acting on the physical $i$th qubit imposing $\forall_{i} \tilde{Z}_{i} = Z_{i}$ to yield the basis $\{\ket{\pm Z_{1}.. \pm Z_n}\}$. For an example, the state $\ket{\psi} =  \alpha \ket{0} + \beta \ket{1}$ can equivalently represented as $\ket{\psi} = \alpha \ket{+Z} + \beta \ket{-Z}$. A key thing to note is that in general an arbitrary linear composition of different stabilizer states is not a stabilizer state, in the previous example the state $\ket{\psi}$ is not stabilized by either $\pm Z$ for arbitrary choices of $\alpha, \beta$.
 
 
+
 #### Example: Bell State 
 
 The bell state or more generally the bell basis is characterized by the stabilizer generators $\mathcal{S}_{\beta_{00}}= \{X_{0}X_{1}, Z_{0}Z_{1} \}$, the corresponding stabilizer-state is $\ket{\beta_{00}} = \ket{00} + \ket{11}$. It is easy to see that both the stabilizers generators yield an eigenvalue $+1$ on the state $\ket{\beta_{00}}$. 
@@ -90,5 +93,10 @@ From the section [#Action of Pauli operators on Stabilizer States](#Action%20of%
 **Example :** For Bell states, $H_{\beta} = - (X_{1}X_{2} + Z_{1}Z_{2})$ , realize that the state $\ket{\beta_{ij}}$ corresponds to the energy configuration $\psi_{\beta}= (i,j)$. And has the following eigen-decomposition. $\epsilon(\beta_{00})=-2$, $\epsilon(\beta_{01}) = \epsilon(\beta_{10}) =0$ ,$\epsilon(\beta_{11}) = 2$. 
 
 
+## Perturbed Stabilizer Hamiltonians and their Ground States
+
+
 ### Effect of Perturbation on Stabilizer Hamiltonians
 Now that we understand a bit about the structure of the eigenspectrum of stabilizer hamiltonians we can look into how their eigenspaces are modified under the influence of external perturbations. Any generic perturbations represented as the weighted sum of pauli operators as $H_{\delta} = \lambda_{1}E_{1} + \lambda_{2}E_{2} + \dots$ where the weights $\lambda$ indicate the strength of the perturbations and are usually of small magnitude. For most physically inspired problems of interest the error operators $E_{1}, E_{2} \dots$ are single qubit paulis, (for instance the problems in [[ReadingDocuments/VQE-InfusedCircuitMBQC@LDellantonio24.pdf|VQE-InfusedCircuitMBQC@LDellantonio24]], [[ReadingDocuments/VQE-MBQC@RFegurson21.pdf|VQE-MBQC@RFegurson21]], etc.) However we are  
+
+## MBQC Ansatz Construction using PGA
