@@ -14,6 +14,7 @@ references: "[[conversations/［qat-hiring］ Interest in Intership @ Harold Oll
 **Refs :** 
 - [stabg#1] : https://www.scottaaronson.com/qclec/28.pdf
 - [stabg#2] : QCQI, Neilsen & Chuang  Section 10.5
+- [stabg#3] : https://arthurpesah.me/blog/2023-01-31-stabilizer-formalism-1/ (*though less formal this blog is quite intuitive and covers the core concepts effortlessly :)
 ---
 
 > [@rp]: Please refer to [stabg#1] for a preliminary introduction to stabilizer states, and/or also the material in [stabg#2]. It will be enough for you to understand the basics of stabilizer formalism, i.e 
