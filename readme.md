@@ -3,7 +3,7 @@
 
 I have inlcuded some notes to get you started for the project :), you can find it at [Main Note.md](notes/Main%20Note.md). 
 
->Currently the notes are still uder development and we willl time to time keep updating the notes
+>Currently the notes are still uder development and we will keep updating them.
 
 ### Method ...
 - If you are facing difficulty understanding a concept either from the notes or the references, you can raise a github issue.
