@@ -31,7 +31,7 @@ people:
 ### [[dailynotes/14-01-2025|14-01-2025]]
 
 - https://arxiv.org/pdf/1505.07811 ; Section: SUPPLEMENTAL MATERIAL, Stabilizer heat bath and Davis generators.
-    - Has some description on the notation thta t ackles the action of paulis on stabilizer hamiltonians
+    - Has some description on the notation thta t ackles the action of paulis on stabilizer hamiltonians[](https://stackoverflow.com/posts/4950725/edit#)
     - ![[obsidian-attatchments/Pasted image 20250114181904.png]]
 - [ ] we also need to include the behavior under the action of pauli-exponentials as well.
 - [ ] I think we also need to present the case where we have $k\leq n$ generators, which is something excluded in the usual literature but is rather important for our line of study.
