@@ -31,7 +31,7 @@
     - Usually most variational algorithms in the literature are non-clifford because the variational angles are allowed to vary continuously, whereas restricting them to clifford would require us to vary only over a discrete set of angles combined with the fact that its classically simulatable makes their approach a bit "out-of-the-box" which is why we found it interesting.
 
 
-### MBQC  based VQE
+### MBQC based VQE
 
 -  [VMLdel21](http://arxiv.org/abs/2010.13940v3)  `*`
     - This is the primary paper that talked about construction of "Graph-decoration" as a techniques that allows us to construct an variational ansatz out of a graph-state. In essence this is very similar to the construction of variational unitaries except here we are doing it in the MBQC model. 

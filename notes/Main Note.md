@@ -81,8 +81,7 @@ For any system of $k$ stabilizer-generators on an $n$ dimensional system, we can
 ### Properties of Stabilizer Hamiltonian
 **Refs :**
 - [stabh#1] :  https://arxiv.org/pdf/1505.07811, SUPPLEMENTAL MATERIAL, Stabilizer heat bath and Davis generators
-- [[ReadingDocuments/StabGroundStatesSimManyBodyPhysics@JSun24.pdf#page=3&selection=3,0,5,48|StabGroundStatesSimManyBodyPhysics@JSun24, p.3]]
--        
+- [stabh#2] : https://arxiv.org/pdf/2403.08441, Part: THEORY, Section: A,B 
 ---
 
 Given Stabilizer Group (i.e a commuting set of pauli) we can always construct a stabilizer hamiltonian of the form 
@@ -94,10 +93,14 @@ From the section [#Action of Pauli operators on Stabilizer States](#Action%20of%
 **Example :** For Bell states, $H_{\beta} = - (X_{1}X_{2} + Z_{1}Z_{2})$ , realize that the state $\ket{\beta_{ij}}$ corresponds to the energy configuration $\psi_{\beta}= (i,j)$. And has the following eigen-decomposition. $\epsilon(\beta_{00})=-2$, $\epsilon(\beta_{01}) = \epsilon(\beta_{10}) =0$ ,$\epsilon(\beta_{11}) = 2$. 
 
 
+---
 ## Perturbed Stabilizer Hamiltonians and their Ground States
+**Refs :** [refs on MBQC based VQE](notes/LiteratureReview###MBQC_based_VQE)
+- [VMLdel21]
+- [VMLdel23]
 
-
+---
 ### Effect of Perturbation on Stabilizer Hamiltonians
-Now that we understand a bit about the structure of the eigenspectrum of stabilizer hamiltonians we can look into how their eigenspaces are modified under the influence of external perturbations. Any generic perturbations represented as the weighted sum of pauli operators as $H_{\delta} = \lambda_{1}E_{1} + \lambda_{2}E_{2} + \dots$ where the weights $\lambda$ indicate the strength of the perturbations and are usually of small magnitude. For most physically inspired problems of interest the error operators $E_{1}, E_{2} \dots$ are single qubit paulis, (for instance the problems in [[ReadingDocuments/VQE-InfusedCircuitMBQC@LDellantonio24.pdf|VQE-InfusedCircuitMBQC@LDellantonio24]], [[ReadingDocuments/VQE-MBQC@RFegurson21.pdf|VQE-MBQC@RFegurson21]], etc.) However we are  
+Now that we understand a bit about the structure of the eigenspectrum of stabilizer hamiltonians we can look into how their eigenspaces are modified under the influence of external perturbations. Any generic perturbations represented as the weighted sum of pauli operators as $H_{\delta} = \lambda_{1}E_{1} + \lambda_{2}E_{2} + \dots$ where the weights $\lambda$ indicate the strength of the perturbations and are usually of small magnitude. For most physically inspired problems of interest the error operators $E_{1}, E_{2} \dots$ are single qubit paulis, (for instance the problems in [VMLdel21] and [VMLdel23])
 
 ## MBQC Ansatz Construction using PGA
