@@ -5,11 +5,25 @@ people:
   - "[[_tags/_people/@martina|@martina]]"
 references: "[[conversations/［qat-hiring］ Interest in Intership @ Harold Ollivier ˂harold.ollivier@inria.fr˃|［qat-hiring］ Interest in Intership @ Harold Ollivier ˂harold.ollivier@inria.fr˃]]"
 ---
+
 ## Introduction to Stabilizer Groups and Hamiltonians
 
-%% Add defnitions of stabilizers  %%
+### Stabilizer Groups
+A **stabilizer group** \( S \) is an Abelian subgroup of the \( n \)-qubit Pauli group \( \mathcal{P}_n \) that leaves a quantum state \( |\psi\rangle \) unchanged. This means that for every \( P \in S \), we have:
+\[
+P |\psi\rangle = |\psi\rangle.
+\]
+If the group \( S \) contains \( n \) independent commuting Pauli operators, then it uniquely defines \( |\psi\rangle \), which is called a **stabilizer state**.
+
+### Stabilizer Hamiltonians
+A **stabilizer Hamiltonian** is a sum of commuting Pauli operators, written as:
+\[
+H_0 = -\sum_{P \in G} \alpha_P P,
+\]
+where \( G \) is a maximal Abelian subset of \( \mathcal{P}_n \). Since all terms in \( H_0 \) commute, the eigenstates of \( H_0 \) are stabilizer states. These Hamiltonians appear in many areas, like quantum error correction and topological phases.
 
 ---
+
 ### Properties of Stabilizer Groups 
 **Refs :** 
 - [stabg#1] : https://www.scottaaronson.com/qclec/28.pdf
@@ -104,3 +118,5 @@ From the section [#Action of Pauli operators on Stabilizer States](#Action%20of%
 Now that we understand a bit about the structure of the eigenspectrum of stabilizer hamiltonians we can look into how their eigenspaces are modified under the influence of external perturbations. Any generic perturbations represented as the weighted sum of pauli operators as $H_{\delta} = \lambda_{1}E_{1} + \lambda_{2}E_{2} + \dots$ where the weights $\lambda$ indicate the strength of the perturbations and are usually of small magnitude. For most physically inspired problems of interest the error operators $E_{1}, E_{2} \dots$ are single qubit paulis, (for instance the problems in [VMLdel21] and [VMLdel23])
 
 ## MBQC Ansatz Construction using PGA
+
+
