@@ -30,6 +30,29 @@
     - Here the authors aim to find ansatz that are clifford. (Clifford unitaries are simulatable classically by the Gottessman-Knill theorem)
     - Usually most variational algorithms in the literature are non-clifford because the variational angles are allowed to vary continuously, whereas restricting them to clifford would require us to vary only over a discrete set of angles combined with the fact that its classically simulatable makes their approach a bit "out-of-the-box" which is why we found it interesting.
 
+### MBQC
+
+- [OWHbri06](http://arxiv.org/abs/quant-ph/0603226v2) 
+    - This is the first time they introduces the one-way model of computation. its very clear on the main concepts regarding how computations could be carried out on a stabilizer state by harnessing rotated basis measurements only.
+    - however the conventions they follow might be a bit older compared to the more modern papers + they don't focus a lot on the ideas about determinism and gflow and so on.
+    - If its fine you can go through all the section before section 4
+     
+- [GFKash07](https://arxiv.org/pdf/quant-ph/0603226v2)
+    - this was the first (imo) paper that talk about 'gflow' which is something we use a lot in our current work, so you might like to go through some of it. Though an word of caution is that the idea of gflow keeps evolving from time to time and so ..
+    - the presentation in this paper relies more on the semantics of the computation, and so is a bit more 'computer-scienceyy' than physics + and to be honest i never liked it :)
+    - I would suggest you go through it the introductory materials, and then i can explain the rest to you myself
+     
+- [RMWsim21](https://arxiv.org/abs/2109.05654)
+    - This is a very recent paper, and has a very nice introductory material on MBQC
+    - Rest of the paper is very semantic + and i would not recommend reading it right now, but nonetheless it introduced some concepts such as 
+        - Pauli Extraction Strings : which allows you to directly connect the gflow (some thing completely based on the graph-structure) to the class of unitary that could be implemented by varying the angles (i.e an possible ansatz in relevance to our work ), which would be useful for ansatz designing. 
+ 
+- [MQLman24](https://arxiv.org/abs/2405.08319v1)
+    - This is a master's thesis of someone who worked on using MBQC for Variational Problems and did his work in quiet some detail so its worth go through + he's also master's student so perhaps you will find his presentation more relatable than in the other papers. 
+    - He also presents schemes of designing ansatz's, though again for specific problems that we was interested in solving, but nonetheless he's approach (i believe) had more room for generalization than the others. + he explicitly discusses how to do training and etc. so the presentation is quiet complete.
+    - An important thing that we learned from the paper is the idea that you can comment on the expressivity of a graph-based ansatz by looking at its Dynamical Lie Algebra (DLA, and DLA of a graph-ansatz can be deduced using the idea of Pauli-Extraction-Strings introduced in [RMWsim21]. 
+        - what was next was for us to connect [PGA] to the above ideas so that we can have a direct path from expressivity to graph-construction, but somehow we didn't manage to do it completely. i'll tell you more ..
+
 
 ### MBQC based VQE
 
