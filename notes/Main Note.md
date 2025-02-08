@@ -2,7 +2,7 @@
 type: "[[_tags/_notetype_tags/*formal-note]]"
 people:
   - "[[_tags/_people/@harold|@harold]]"
-  - "[[_tags/_people/@martina|@martina]]"
+  - "[[_tags/_people/@martina.leonetti|@martina.leonetti]]"
 references: "[[conversations/［qat-hiring］ Interest in Intership @ Harold Ollivier ˂harold.ollivier@inria.fr˃|［qat-hiring］ Interest in Intership @ Harold Ollivier ˂harold.ollivier@inria.fr˃]]"
 ---
 
