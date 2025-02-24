@@ -53,7 +53,7 @@ $$C_{i}  \: = \: \left( \tilde{E}_i \right)_{\mathcal{O}}  \otimes \left(M_{j}\o
 - $\left(M_{j}\otimes M_{k}\otimes .. \right)_{i \prec \mathcal{O}^{c}}$ corresponds to requirement 3
 the main takeaway from the structure is the fact that upon the action of the measurement via $\hat{P}_{mM}$  only the part acting on the output qubits remain and thus allows us to construct the unitary that was implemented by the measurement pattern.
 
-To see the role of the correction operator consider the following example [fig](shared-repos/mb-vqa/notes/attatchments/pauli-extraction-martina_annotated.svg)
+To see the role of the correction operator consider the following example [fig](../notes/attatchments/pauli-extraction-martina_annotated.svg)
 
 The extracted sequence pauli exponentials are corresponds to the 'extracted' unitary and is the overall effect of the measurement process on the state $\ket{\mathcal{S}_G, \psi_{in}}$
 
